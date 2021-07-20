@@ -1,0 +1,607 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    overflow: auto;
+}
+.main-container{
+    position: relative;
+}
+                                            /*NAVBAR*/
+                                            /*NAVBAR*/
+                                            /*NAVBAR*/
+.logo{
+    color: rgb(235, 52, 52);
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-left: 30px;
+}
+
+.navBar{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    height: 70px;
+    position: relative;
+}
+.navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+    height: 100%;
+}
+.link a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    height: 100%;
+    
+}
+.link a::after{
+    content: '';
+    background-color: red;
+    width: 0%;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    position: absolute;
+    transition: width 0.3s ease-in-out;
+}
+.link a:hover::after{
+    width: 100%;
+}
+                                /*SIDE BAR*/
+                                /*SIDE BAR*/
+                                /*SIDE BAR*/
+.sideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+.icon{
+    color: white;
+    padding: 20px 0;
+    font-size: 1.7rem;
+}
+.search-icon{
+    position: relative;
+    cursor: pointer;
+}
+.backgroundTheme{
+    min-height: 30vh;
+    background:  linear-gradient(to bottom, rgba(0,0,0,0), #333),url('captain-shield.jpg') ;
+    background-repeat: no-repeat;
+    
+}
+
+.main-feature{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 500px;
+}
+.main-feature-title{
+    font-weight: 600;
+    font-size: 3rem;
+    color: rgb(137, 154, 204);
+}
+.main-feature-subtitle{
+    letter-spacing: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(137, 154, 204);
+    margin-bottom: 30px;
+}
+.main-feature-text{
+    color: white;
+}
+
+#searchBar{
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: #333;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 10px;
+    width: 0;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    left: 80px;
+    visibility: hidden;
+    transition: width 0.3s ease, visibility 0.3s ease;
+}
+#searchBar:focus{
+    outline: none;
+}
+#searchBar::placeholder{
+    text-align: center;
+    font-size: 20px;
+}
+.main-container.open #searchBar {
+    width: 300px;
+    visibility: visible;
+}
+.search-icon.open .icons .close{
+    visibility: visible;
+}
+
+.link-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+                                        /*CONTENT*/
+                                        /*CONTENT*/
+                                        /*CONTENT*/
+#main-feature-button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0) ;
+    color: aliceblue;
+    border: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: all .1s ease-in;
+}
+#main-feature-button:hover{
+    background-color: rgb(170, 46, 46);
+    color: white;
+}
+.featured{
+    width: 100%;
+    height: 45vh;
+    background: #333;
+    overflow: hidden;
+    position: relative;
+}
+.featured-list{
+    position: relative;
+    display: flex;    
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform .4s ease;
+    margin-left: 100px;
+}
+.featured-container{
+    height: 250px;
+    margin-right: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in;
+}
+.featured-container-one{
+    margin-left: 90px;
+}
+.featured-container:hover{
+    transform: scale(1.2);
+}
+.featured-container:hover img{
+    opacity: 0.3;
+}
+.featured-container img{
+    width: 270px;
+    height: 100%;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: all 0.3s ease-in;
+}
+.featured-container:hover .featured-description{
+    opacity: 1;
+}
+.featured h1{
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+.featured-text{
+    font-weight: 400;
+}
+.featured-description{
+    color: rgb(238, 214, 214);
+    position: absolute;
+    max-width: 250px;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    text-align: center;
+    font-size: 12px;
+    max-height: 90%;
+    max-width: 90%;
+}
+.next-arrow{
+    font-size: 9rem;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    opacity: 0.8;
+    color: rgb(199, 165, 165);
+    cursor: pointer;
+}
+.next-arrow:hover{
+    color: black;
+}
+.back-arrow{
+    font-size: 9rem;
+    position: absolute;
+    top: 70px;
+    left: 80px;
+    opacity: 0.8;
+    color: rgb(199, 165, 165);
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+.back-arrow:hover{
+    color: black;
+}
+.movie-container{
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+}
+.movie-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.movie-description{
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 1px 5px black;
+}
+
+.hamburger-links{
+    display: none;
+}
+                                        /*  FOOTER */
+                                        /*  FOOTER */
+                                        /*  FOOTER */
+#footer{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    padding: 30px;
+}
+.footer-logo{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+}
+.footer-logo h5{
+    padding-top: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.footer-text{
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+}
+.col2{
+    margin-top: 30px;
+    color: white;
+}
+.col2 ul{
+    list-style: none;
+    padding-top: 10px;
+}
+.col2 h2{
+    font-size: 1.9rem;
+}
+.col2 ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 3px;
+}
+.col3{
+    margin-top: 30px;
+    color: white;
+}
+.col3 h2{
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+}
+.col3 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 3px;
+}
+.col4{
+    margin-top: 30px;
+    color: white;
+}
+.col4 h2{
+    font-size: 1.9rem;
+}
+.col4 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 3px;
+}
+.social{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+#footer a:hover{
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+}
+
+
+                                        /*RESPONSIVENESS*/
+                                        /*RESPONSIVENESS*/
+                                        /*RESPONSIVENESS*/
+@media (max-width:800px){
+    .nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 100%;
+        
+    }
+    .navLinks{
+        padding-left: 50px;
+    }
+    .logo{
+        color: rgb(235, 52, 52);
+        font-weight: 600;
+        font-size: 1.5rem;
+        /*padding-left: 50px;*/
+    }
+    .link.link a{
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        position: relative;
+        height: 100%;
+    }
+    
+    
+}
+
+@media (max-width:500px){
+    .main-container{
+       width: 100%;
+    }
+    .sideBar{
+        display: none;
+    }
+    #searchBar{
+        border: 1px solid grey;
+        border-radius: 5px;
+        color: #333;
+        font-size: 15px;
+        text-align: left;
+        padding-left: 10px;
+        width: 300px;
+        height: 30px;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        margin-left: -150px;
+        visibility: visible;
+    }
+    .nav{
+        justify-content: space-around;
+        width: 100%;
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: black;
+        border-top: 2px solid aquamarine;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    .links.close{
+        transform: translateX(0);
+    }
+    .link:hover{
+        width: 100%;
+        background-color: #333;
+    }
+    .link a::after{
+        display: none;
+    }
+    .link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .links a{
+        width: inherit;
+    }
+    .links li{
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        background-color: black;
+    }
+    .ham{
+        width: 30px;
+        height: 27px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .hamburger{
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        position: relative;
+        cursor: pointer;
+        margin-top: 15px;
+
+    }
+    .ham.red .hamburger{
+        background-color: red;
+    }
+    .hamburger::before{
+        content: '';
+        top: -7px;
+        left: 0;
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: white;
+    }
+    .hamburger::after{
+        content: '';
+        bottom: -7px;
+        left: 0;
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: white;
+    }
+    .ham.red .hamburger::after, .ham.red .hamburger::before{
+        background-color: red;
+    }
+    .content{
+        width: 100%;
+    }
+    
+    .main-feature{
+        margin-left: 0;
+        width: 80%;
+        margin: 100px auto 0;
+        margin-top: 140px;
+    }
+    .main-feature h1{
+        font-size: 2rem;
+    }
+    .featured{
+        margin-top: -2px;
+        height: auto;
+        
+    }
+    .featured-list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+        overflow: hidden;
+        background-color: #333;
+    }
+    .featured-container{
+        width: 270px;
+        margin-right: 0;
+        margin-bottom: 35px;
+    }
+    .feeature-container img{
+        width: 100px;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.3s ease-in;
+        object-fit: cover;
+    }
+    .backgroundTheme{
+        height: auto;
+        background:  linear-gradient(to bottom, rgba(0,0,0,0), #333) ;
+        background-repeat: no-repeat;
+    }
+    .back-arrow{
+        left: 30px;
+        
+    }
+    .back-arrow, .next-arrow{
+        font-size: 5rem;
+        top: 120px;
+        display: none;
+        visibility: hidden;
+    }
+    .back-arrow:hover, .next-arrow:hover{
+        color: rgb(199, 165, 165);
+        opacity: 0.8;
+    }
+    #footer{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+    .col2 h2, .col3 h2, .col4 h2{
+        font-size: 1.5rem;
+        color: aquamarine;
+    }
+    
+}
