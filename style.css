@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 body{
     overflow: auto;
@@ -605,5 +606,18 @@ body{
         font-size: 1.5rem;
         color: aquamarine;
     }
-    
+    .up-arrow{
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        font-size: 2rem;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        border: 1px solid white;
+        z-index: 200;
+        padding-left: 8px;
+        padding-top: 2px;
+        border-radius: 5px;
+    }
 }

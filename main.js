@@ -10,7 +10,7 @@ const searchBar = document.getElementById('searchBar');
 const mainContainer = document.querySelector('.main-container');
 const ham = document.querySelector('.ham');
 const links = document.querySelector('.links');
-
+const upArrow = document.querySelector('.up-arrow')
 
                                     //HAMBURGER//
                                     //HAMBURGER//
@@ -18,6 +18,9 @@ const links = document.querySelector('.links');
 ham.addEventListener('click', ()=>{
     links.classList.toggle('close');
     ham.classList.toggle('red');
+})
+upArrow.addEventListener('click',()=>{
+    window.scrollTo(0, 0);
 })
 
 
