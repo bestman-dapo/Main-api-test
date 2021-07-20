@@ -108,7 +108,7 @@ searchForm.addEventListener('submit', (e)=>{
             getMovies(API_URL);
         }
     searchBar.value = '';
-    return
+   
 })
 
 
