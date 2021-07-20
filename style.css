@@ -558,7 +558,7 @@ body{
         margin-bottom: 30px;
         overflow: hidden;
         background-color: #333;
-        cursor: none;
+        cursor: not-allowed;
     }
     .featured-container{
         width: 270px;
