@@ -564,6 +564,7 @@ body{
         width: 270px;
         margin-right: 0;
         margin-bottom: 35px;
+        cursor: not-allowed;
     }
     .feeature-container img{
         width: 100px;
